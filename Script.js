@@ -5,10 +5,10 @@ var myQuestions = [
     {
         question: "Commonly used data types DO NOT include:",
         answers: {
-            a: 'Strings',
-            b: 'Booleans',
-            c: 'Alerts',
-            d: 'Numbers'
+            a: Strings = "Strings",
+            b: Booleans = "Booleans",
+            c: Alerts = "Alerts",
+            d: Numbers = "Numbers"
         },
         correctAnswer: 'c'
     },
@@ -16,10 +16,10 @@ var myQuestions = [
     {
         question: "The condition in an if / else statement is enclosed within ____.",
         answers: {
-            a: 'Quotes',
-            b: 'Curly Brackets',
-            c: 'Parenthesis',
-            d: 'Square brackets'
+            a: Quotes = "Quotes",
+            b: CurlyBrackets = "Curly Brackets",
+            c: Parenthesis = "Parenthesis",
+            d: Squarebrackets = "Square Brackets"
         },
         correctAnswer: 'c'
     },
@@ -47,16 +47,25 @@ var myQuestions = [
     }
 
 ];
-console.log(myQuestions[0].question)
+console.log(myQuestions[0].answers.Strings)
 console.log(myQuestions[0].answers.a);
 
-var body = document.body;
+var body = document.getElementById("div");
+var buttonInput = document.getElementsByClassName("qButton");
+
 // var startButt = null;
 
 
 // A main function that handles all the content and running of secondary functions for each page
 
 function buildQuiz() {
+
+
+    //    Timer
+
+
+
+
 
     var viewHigh = document.createElement("h4")
     body.appendChild(viewHigh);
@@ -65,17 +74,20 @@ function buildQuiz() {
 
     var viewTime = document.createElement("h4")
     body.appendChild(viewTime);
-    viewTime.textContent = "0"
+    viewTime.textContent = 70;
     viewTime.setAttribute("style", "margin: 0.5rem; float: right;")
+    viewTime.setAttribute("id", "timerDigit")
 
     var startButt = document.createElement("input");
     var h1El = document.createElement("h1");
     var h2El = document.createElement("h2");
 
+
+
     function mainPage() {
 
-  
-       
+
+
         h1El.textContent = "Coding Quiz Challenge";
         h2El.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that wrong answers will penalize your score/time by ten seconds!";
 
@@ -94,8 +106,33 @@ function buildQuiz() {
 
     }
 
-    
+
     startButt.addEventListener("click", function quizFn1() {
+
+        // Sart Timer!!
+        var timer = setInterval(timerFn, 1000);
+        var t = 70;
+         function timerFn() {
+     
+             if (t == 0) {
+                 clearInterval(timer);
+                 // And go to Quiz end
+                 // Time out Meesage
+             }
+             else {
+                 t--;
+             }
+     
+             document.getElementById("timerDigit").textContent = t;
+     
+             function stopTimerFn() {
+                 clearInterval(timer);
+             }
+             
+     
+         };
+     
+
 
         // Hide!
         startButt.setAttribute("style", "display: none");
@@ -112,42 +149,56 @@ function buildQuiz() {
         // q1.1Button 
         var q11Butt = document.createElement("input");
         body.appendChild(q11Butt);
-        
+
         q11Butt.setAttribute("style", "margin:auto; margin-bottom:10px; width:8%; display:block;");
-        q11Butt.setAttribute("class", "btn btn-primary");
+        q11Butt.setAttribute("class", "btn qButton btn-primary");
         q11Butt.setAttribute("value", myQuestions[0].answers.a);
         q11Butt.setAttribute("type", "button");
-        q11Butt.setAttribute("onclick", "quizFunction()");
-       
+        // q11Butt.setAttribute("onclick", "quizFunction()");
+
 
         // q1.2Button 
         var q12Butt = document.createElement("input");
         body.appendChild(q12Butt);
         q12Butt.setAttribute("style", "margin:auto; margin-bottom:10px; width:8%; display:block;");
-        q12Butt.setAttribute("class", "btn btn-primary");
+        q12Butt.setAttribute("class", "btn qButton btn-primary");
         q12Butt.setAttribute("value", myQuestions[0].answers.b);
         q12Butt.setAttribute("type", "button");
-      
+
 
         // q1.3Button 
         var q13Butt = document.createElement("input");
         body.appendChild(q13Butt);
+
         q13Butt.setAttribute("style", "margin:auto; margin-bottom:10px; width:8%; display:block;");
-        q13Butt.setAttribute("class", "btn btn-primary");
+        q13Butt.setAttribute("class", "btn qButton btn-primary");
         q13Butt.setAttribute("value", myQuestions[0].answers.c);
         q13Butt.setAttribute("type", "button");
-       
+
 
         // q1.4Button 
         var q14Butt = document.createElement("input");
         body.appendChild(q14Butt);
+
         q14Butt.setAttribute("style", "margin:auto; margin-bottom:10px; width:8%; display:block;");
-        q14Butt.setAttribute("class", "btn btn-primary");
+        q14Butt.setAttribute("class", "btn qButton btn-primary");
         q14Butt.setAttribute("value", myQuestions[0].answers.d);
         q14Butt.setAttribute("type", "button");
-      
+
+
+
+
+        (q14Butt, q13Butt, q12Butt, q11Butt).addEventListener("click", function () {
+
+            console.log("POOOOP!!!")
+
+
+        });
+
     });
 
+
+    // q11Butt.addEventListener("click", )
 
     // // show the questions
     // showQuestions(questions, quizContainer);
@@ -161,7 +212,6 @@ function buildQuiz() {
 }
 
 buildQuiz();
-
 
 
 
