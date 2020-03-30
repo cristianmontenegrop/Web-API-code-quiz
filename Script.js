@@ -53,6 +53,8 @@ console.log(myQuestions[0].answers.a);
 var body = document.getElementById("div");
 var buttonInput = document.getElementsByClassName("qButton");
 var h13El = "";
+var timeOut = false;
+var initialsForm = "";
 
 var q11Butt = document.createElement("input");
 var q12Butt = document.createElement("input");
@@ -82,6 +84,7 @@ function buildQuiz() {
     var h1El = document.createElement("h1");
     var h2El = document.createElement("h2");
 
+    var submitButt = document.createElement("input");
 
 
     function mainPage() {
@@ -107,26 +110,10 @@ function buildQuiz() {
 
     }
 
-    function removeHandlerFn() {
-
-        (q12Butt).removeEventListener("click", q2EvLi);
-        (q13Butt).removeEventListener("click", q3EvLi);
-        (q14Butt).removeEventListener("click", q4EvLi);
-    }
-
-
-
     // Quiz Function 1
     startButt.addEventListener("click", quizFn1);
 
-
     function quizFn1() {
-
-
-        var butt1 = document.getElementById("butt11");
-        var butt2 = document.getElementById("butt12");
-        var butt3 = document.getElementById("butt13");
-        var butt4 = document.getElementById("butt14");
 
         // Sart Timer!!
         var timer = setInterval(timerFn, 1000);
@@ -136,7 +123,7 @@ function buildQuiz() {
             if (t == 0) {
                 clearInterval(timer);
                 allDoneFn();
-                // Time out Meesage on Quiz End
+                timeOut = true;
             }
             else {
                 t--;
@@ -267,11 +254,11 @@ function buildQuiz() {
                 quizFn3();
                 // removeHandlerFn();
                 (q11Butt).removeEventListener("click", q1EvLi);
-    
+
             });
-    
+
             (q12Butt).addEventListener("click", function q2EvLi() {
-    
+
                 console.log("POOOO 2 2")
                 myQuestions[1].answers.b = true;
                 console.log(myQuestions[0].answers.b);
@@ -279,9 +266,9 @@ function buildQuiz() {
                 // removeHandlerFn();
                 (q12Butt).removeEventListener("click", q2EvLi);
             });
-    
+
             (q13Butt).addEventListener("click", function q3EvLi() {
-    
+
                 console.log("POOOO 2 3");
                 myQuestions[1].answers.c = true;
                 console.log(myQuestions[0].answers.c);
@@ -289,9 +276,9 @@ function buildQuiz() {
                 // removeHandlerFn();
                 (q13Butt).removeEventListener("click", q3EvLi);
             });
-    
+
             (q14Butt).addEventListener("click", function q4EvLi() {
-    
+
                 console.log("POOOO 2 4")
                 myQuestions[1].answers.d = true;
                 console.log(myQuestions[0].answers.d);
@@ -319,11 +306,11 @@ function buildQuiz() {
                     quizFn4();
                     // removeHandlerFn();
                     (q11Butt).removeEventListener("click", q1EvLi);
-        
+
                 });
-        
+
                 (q12Butt).addEventListener("click", function q2EvLi() {
-        
+
                     console.log("POOOO 3 2")
                     myQuestions[2].answers.b = true;
                     console.log(myQuestions[2].answers.b);
@@ -331,9 +318,9 @@ function buildQuiz() {
                     // removeHandlerFn();
                     (q12Butt).removeEventListener("click", q2EvLi);
                 });
-        
+
                 (q13Butt).addEventListener("click", function q3EvLi() {
-        
+
                     console.log("POOOO 3 3");
                     myQuestions[2].answers.c = true;
                     console.log(myQuestions[2].answers.c);
@@ -341,9 +328,9 @@ function buildQuiz() {
                     // removeHandlerFn();
                     (q13Butt).removeEventListener("click", q3EvLi);
                 });
-        
+
                 (q14Butt).addEventListener("click", function q4EvLi() {
-        
+
                     console.log("POOOO 3 4")
                     myQuestions[2].answers.d = true;
                     console.log(myQuestions[2].answers.d);
@@ -370,29 +357,29 @@ function buildQuiz() {
                         console.log(myQuestions[3].answers.a);
                         allDoneFn();
                         (q11Butt).removeEventListener("click", q1EvLi);
-            
+
                     });
-            
+
                     (q12Butt).addEventListener("click", function q2EvLi() {
-            
+
                         console.log("POOOO 4 2")
                         myQuestions[3].answers.b = true;
                         console.log(myQuestions[3].answers.b);
                         allDoneFn();
                         (q12Butt).removeEventListener("click", q2EvLi);
                     });
-            
+
                     (q13Butt).addEventListener("click", function q3EvLi() {
-            
+
                         console.log("POOOO 4 3");
                         myQuestions[3].answers.c = true;
                         console.log(myQuestions[3].answers.c);
                         allDoneFn();
                         (q13Butt).removeEventListener("click", q3EvLi);
                     });
-            
+
                     (q14Butt).addEventListener("click", function q4EvLi() {
-            
+
                         console.log("POOOO 4 4")
                         myQuestions[3].answers.d = true;
                         console.log(myQuestions[3].answers.d);
@@ -400,16 +387,41 @@ function buildQuiz() {
                         (q14Butt).removeEventListener("click", q4EvLi);
                     });
 
-                    console.log(myQuestions);
-                    function allDoneFn () {
 
-                        h13El.textContent = myQuestions[3].question;
+                    function allDoneFn() {
+                        console.log(myQuestions);
+                        if (timeOut === true) {
+                            h13El.textContent = "Time Out!!!";
+                        } else {
+                            h13El.textContent = "All Done!";
+                            clearInterval(timer)
+
+                        }
+
+                        body.appendChild(submitButt);
+
+                         // initials form
+                         var initialsForm = document.createElement("input");
+                         initialsForm.setAttribute("style", "float:left; margin:auto; width:15%; display:block;")
+                         initialsForm.setAttribute("class", "form-control");
+                         initialsForm.setAttribute("type", "text");
+                         initialsForm.setAttribute("placeholder", "Type your initials here...");
+                         body.appendChild(initialsForm);
+
+                        // Submit Button
+                        submitButt.setAttribute("style", "float:right; margin:auto; width:8%; display:block;");
+                        submitButt.setAttribute("class", "btn btn-primary");
+                        submitButt.setAttribute("value", "Submit");
+                        submitButt.setAttribute("type", "button");
+
+                        // Hide other Buttons
                         q11Butt.setAttribute("style", "display: none");
                         q12Butt.setAttribute("style", "display: none");
                         q13Butt.setAttribute("style", "display: none");
                         q14Butt.setAttribute("style", "display: none");
 
-                    }
+                       
+                    };
 
 
 
@@ -433,7 +445,7 @@ function buildQuiz() {
         // 	showResults(questions, quizContainer, resultsContainer);
         // }
         // quizFn1();
-     
+
     };
 
     mainPage();
