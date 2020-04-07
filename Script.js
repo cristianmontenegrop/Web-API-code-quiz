@@ -1,8 +1,4 @@
-
-
-
-var myQuestions = [
-    {
+var myQuestions = [{
         question: "Commonly used data types DO NOT include:",
         answers: {
             a: Strings = "Strings",
@@ -118,14 +114,14 @@ function buildQuiz() {
         // Sart Timer!!
         var timer = setInterval(timerFn, 1000);
         var t = 70;
+
         function timerFn() {
 
             if (t == 0) {
                 clearInterval(timer);
                 allDoneFn();
                 timeOut = true;
-            }
-            else {
+            } else {
                 t--;
             }
 
@@ -192,45 +188,41 @@ function buildQuiz() {
         q14Butt.setAttribute("type", "button");
 
 
-        (q11Butt).addEventListener("click", function q1EvLi() {
+        (q11Butt).addEventListener("click", function q11EvLi() {
 
             console.log("POOOO 1 1");
-            myQuestions[0].answers.a = true;
+            myQuestions[0].answers.a = false;
             console.log(myQuestions[0].answers.a);
             quizFn2();
-            // removeHandlerFn();
-            (q11Butt).removeEventListener("click", q1EvLi);
+            (q11Butt).removeEventListener("click", q11EvLi);
 
         });
 
-        (q12Butt).addEventListener("click", function q2EvLi() {
+        (q12Butt).addEventListener("click", function q12EvLi() {
 
             console.log("POOOO 1 2")
-            myQuestions[0].answers.b = true;
+            myQuestions[0].answers.b = false;
             console.log(myQuestions[0].answers.b);
             quizFn2();
-            // removeHandlerFn();
-            (q12Butt).removeEventListener("click", q2EvLi);
+            (q12Butt).removeEventListener("click", q12EvLi);
         });
 
-        (q13Butt).addEventListener("click", function q3EvLi() {
+        (q13Butt).addEventListener("click", function q13EvLi() {
 
             console.log("POOOO 1 3");
             myQuestions[0].answers.c = true;
             console.log(myQuestions[0].answers.c);
             quizFn2();
-            // removeHandlerFn();
-            (q13Butt).removeEventListener("click", q3EvLi);
+            (q13Butt).removeEventListener("click", q13EvLi);
         });
 
-        (q14Butt).addEventListener("click", function q4EvLi() {
+        (q14Butt).addEventListener("click", function q14EvLi() {
 
             console.log("POOOO 1 4")
-            myQuestions[0].answers.d = true;
+            myQuestions[0].answers.d = false;
             console.log(myQuestions[0].answers.d);
             quizFn2();
-            // removeHandlerFn();
-            (q14Butt).removeEventListener("click", q4EvLi);
+            (q14Butt).removeEventListener("click", q14EvLi);
         });
 
 
@@ -246,45 +238,41 @@ function buildQuiz() {
             q14Butt.setAttribute("value", myQuestions[1].answers.d);
 
 
-            (q11Butt).addEventListener("click", function q1EvLi() {
+            (q11Butt).addEventListener("click", function q21EvLi() {
 
                 console.log("POOOO 2 1");
-                myQuestions[1].answers.a = true;
-                console.log(myQuestions[0].answers.a);
+                myQuestions[1].answers.a = false;
+                console.log(myQuestions[1].answers.a);
                 quizFn3();
-                // removeHandlerFn();
-                (q11Butt).removeEventListener("click", q1EvLi);
+                (q11Butt).removeEventListener("click", q21EvLi);
 
             });
 
-            (q12Butt).addEventListener("click", function q2EvLi() {
+            (q12Butt).addEventListener("click", function q22EvLi() {
 
                 console.log("POOOO 2 2")
-                myQuestions[1].answers.b = true;
-                console.log(myQuestions[0].answers.b);
+                myQuestions[1].answers.b = false;
+                console.log(myQuestions[1].answers.b);
                 quizFn3();
-                // removeHandlerFn();
-                (q12Butt).removeEventListener("click", q2EvLi);
+                (q12Butt).removeEventListener("click", q22EvLi);
             });
 
-            (q13Butt).addEventListener("click", function q3EvLi() {
+            (q13Butt).addEventListener("click", function q23EvLi() {
 
                 console.log("POOOO 2 3");
                 myQuestions[1].answers.c = true;
-                console.log(myQuestions[0].answers.c);
+                console.log(myQuestions[1].answers.c);
                 quizFn3();
-                // removeHandlerFn();
-                (q13Butt).removeEventListener("click", q3EvLi);
+                (q13Butt).removeEventListener("click", q23EvLi);
             });
 
-            (q14Butt).addEventListener("click", function q4EvLi() {
+            (q14Butt).addEventListener("click", function q24EvLi() {
 
                 console.log("POOOO 2 4")
-                myQuestions[1].answers.d = true;
-                console.log(myQuestions[0].answers.d);
+                myQuestions[1].answers.d = false;
+                console.log(myQuestions[1].answers.d);
                 quizFn3();
-                // removeHandlerFn();
-                (q14Butt).removeEventListener("click", q4EvLi);
+                (q14Butt).removeEventListener("click", q24EvLi);
             });
 
             // Quiz Function 3
@@ -298,45 +286,41 @@ function buildQuiz() {
                 q14Butt.setAttribute("value", myQuestions[2].answers.d);
 
 
-                (q11Butt).addEventListener("click", function q1EvLi() {
+                (q11Butt).addEventListener("click", function q31EvLi() {
 
                     console.log("POOOO 3 1");
-                    myQuestions[2].answers.a = true;
+                    myQuestions[2].answers.a = false;
                     console.log(myQuestions[2].answers.a);
                     quizFn4();
-                    // removeHandlerFn();
-                    (q11Butt).removeEventListener("click", q1EvLi);
+                    (q11Butt).removeEventListener("click", q31EvLi);
 
                 });
 
-                (q12Butt).addEventListener("click", function q2EvLi() {
+                (q12Butt).addEventListener("click", function q32EvLi() {
 
                     console.log("POOOO 3 2")
-                    myQuestions[2].answers.b = true;
+                    myQuestions[2].answers.b = false;
                     console.log(myQuestions[2].answers.b);
                     quizFn4();
-                    // removeHandlerFn();
-                    (q12Butt).removeEventListener("click", q2EvLi);
+                    (q12Butt).removeEventListener("click", q32EvLi);
                 });
 
-                (q13Butt).addEventListener("click", function q3EvLi() {
+                (q13Butt).addEventListener("click", function q33EvLi() {
 
                     console.log("POOOO 3 3");
-                    myQuestions[2].answers.c = true;
+                    myQuestions[2].answers.c = false;
                     console.log(myQuestions[2].answers.c);
                     quizFn4();
-                    // removeHandlerFn();
-                    (q13Butt).removeEventListener("click", q3EvLi);
+                    (q13Butt).removeEventListener("click", q33EvLi);
                 });
 
-                (q14Butt).addEventListener("click", function q4EvLi() {
-
+                (q14Butt).addEventListener("click", function q34EvLi() {
+                    // ??????  1 4 and 2 4
                     console.log("POOOO 3 4")
                     myQuestions[2].answers.d = true;
                     console.log(myQuestions[2].answers.d);
                     quizFn4();
-                    // removeHandlerFn();
-                    (q14Butt).removeEventListener("click", q4EvLi);
+                    (q14Butt).removeEventListener("click", q34EvLi);
                 });
 
 
@@ -350,46 +334,46 @@ function buildQuiz() {
                     q13Butt.setAttribute("value", myQuestions[3].answers.c);
                     q14Butt.setAttribute("value", myQuestions[3].answers.d);
 
-                    (q11Butt).addEventListener("click", function q1EvLi() {
+                    (q11Butt).addEventListener("click", function q41EvLi() {
 
                         console.log("POOOO 4 1");
-                        myQuestions[3].answers.a = true;
+                        myQuestions[3].answers.a = false;
                         console.log(myQuestions[3].answers.a);
                         allDoneFn();
-                        (q11Butt).removeEventListener("click", q1EvLi);
+                        (q11Butt).removeEventListener("click", q41EvLi);
 
                     });
 
-                    (q12Butt).addEventListener("click", function q2EvLi() {
+                    (q12Butt).addEventListener("click", function q42EvLi() {
 
                         console.log("POOOO 4 2")
-                        myQuestions[3].answers.b = true;
+                        myQuestions[3].answers.b = false;
                         console.log(myQuestions[3].answers.b);
                         allDoneFn();
-                        (q12Butt).removeEventListener("click", q2EvLi);
+                        (q12Butt).removeEventListener("click", q42EvLi);
                     });
 
-                    (q13Butt).addEventListener("click", function q3EvLi() {
+                    (q13Butt).addEventListener("click", function q43EvLi() {
 
                         console.log("POOOO 4 3");
                         myQuestions[3].answers.c = true;
                         console.log(myQuestions[3].answers.c);
                         allDoneFn();
-                        (q13Butt).removeEventListener("click", q3EvLi);
+                        (q13Butt).removeEventListener("click", q43EvLi);
                     });
 
-                    (q14Butt).addEventListener("click", function q4EvLi() {
+                    (q14Butt).addEventListener("click", function q44EvLi() {
 
                         console.log("POOOO 4 4")
-                        myQuestions[3].answers.d = true;
+                        myQuestions[3].answers.d = false;
                         console.log(myQuestions[3].answers.d);
                         allDoneFn();
-                        (q14Butt).removeEventListener("click", q4EvLi);
+                        (q14Butt).removeEventListener("click", q44EvLi);
                     });
 
 
                     function allDoneFn() {
-                        console.log(myQuestions);
+                        console.log(myQuestions.answers);
                         if (timeOut === true) {
                             h13El.textContent = "Time Out!!!";
                         } else {
@@ -400,16 +384,18 @@ function buildQuiz() {
 
                         body.appendChild(submitButt);
 
-                         // initials form
-                         var initialsForm = document.createElement("input");
-                         initialsForm.setAttribute("style", "float:left; margin:auto; width:15%; display:block;")
-                         initialsForm.setAttribute("class", "form-control");
-                         initialsForm.setAttribute("type", "text");
-                         initialsForm.setAttribute("placeholder", "Type your initials here...");
-                         body.appendChild(initialsForm);
+                        document.createElement("div");
+
+                        // initials form
+                        var initialsForm = document.createElement("input");
+                        initialsForm.setAttribute("style", "float:left; col:1; margin:auto; width:15%; display:block;")
+                        initialsForm.setAttribute("class", "form-control");
+                        initialsForm.setAttribute("type", "text");
+                        initialsForm.setAttribute("placeholder", "Type your initials here...");
+                        body.appendChild(initialsForm);
 
                         // Submit Button
-                        submitButt.setAttribute("style", "float:right; margin:auto; width:8%; display:block;");
+                        submitButt.setAttribute("style", "float:left; col:1; margin:auto; width:8%; display:block;");
                         submitButt.setAttribute("class", "btn btn-primary");
                         submitButt.setAttribute("value", "Submit");
                         submitButt.setAttribute("type", "button");
@@ -420,7 +406,7 @@ function buildQuiz() {
                         q13Butt.setAttribute("style", "display: none");
                         q14Butt.setAttribute("style", "display: none");
 
-                       
+
                     };
 
 
@@ -433,18 +419,6 @@ function buildQuiz() {
 
         };
 
-
-
-        // q11Butt.addEventListener("click", )
-
-        // // show the questions
-        // showQuestions(questions, quizContainer);
-
-        // // when user clicks submit, show results
-        // submitButton.onclick = function(){
-        // 	showResults(questions, quizContainer, resultsContainer);
-        // }
-        // quizFn1();
 
     };
 
